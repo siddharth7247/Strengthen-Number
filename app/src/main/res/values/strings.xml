@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Strengthen Numbers</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="header_onboarding_1">Experience the Culture</string>
+    <string name="dese_onboarding_1">Join the community that will fuel your passion for health and fitness by supporting each step of your journey.</string>
+    <string name="header_onboarding_2">Post Workouts, Tips &amp; Progress</string>
+    <string name="dese_onboarding_2">JMotivate and inspire others by sharing workouts, tips and tricks, or progress updates with pictures and videos. Feel free to draw some inspiration from others doing the same.</string>
+    <string name="header_onboarding_3">Join Fitness events</string>
+    <string name="dese_onboarding_3">Whether its attending a local group event, traveling out of state to a big seminar, or inviting friends to go through that tough workout with you, the events page will help you achieve your goals.</string>
+    <string name="txt_next">Next</string>
+    <string name="txt_skip">Skip</string>
+    <string name="txt_get_started">Get Started</string>
+    <string name="txt_account">Account</string>
+    <string name="dese_enter_mobile_num">Enter your mobile number to proceed</string>
+    <string name="txt_continue">Continue</string>
+    <string name="txt_mobile_number">           Mobile Number</string>
+    <string name="txt_otp_verification">OTP Verification</string>
+    <string name="txt_verify">Verify</string>
+    <string name="phone_error">Please enter a valid phone number.</string>
+    <string name="dese_otp_sent">We have sent the verification code to your (705) 555-0127 mobile number.</string>
+    <string name="didnt_rec_otp">Didn`t recevied OTP? 25 sec</string>
+    <string name="header_onboarding_4">Allow access to your location</string>
+
+    <string name="bullted_list">
+         <li>Discover nearby fitness events and group workouts happening in your area.</li>
+        \n <li>Find friends who are crushing their goals near you.</li>
+    </string>
+    <string name="txt_allow">Allow</string>
+    <string name="txt_don_t_allow">Don\'t Allow</string>
+</resources>
