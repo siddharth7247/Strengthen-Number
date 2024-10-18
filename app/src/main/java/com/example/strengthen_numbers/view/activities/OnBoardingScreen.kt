@@ -50,8 +50,6 @@ class OnBoardingScreen : AppCompatActivity() {
         viewPager.adapter = myAdapter
         dotIndicator.setViewPager(viewPager)
 
-        
-
         var titalList = listOf(R.string.header_onboarding_1,R.string.header_onboarding_2,R.string.header_onboarding_3)
         var deseList = listOf(R.string.dese_onboarding_1,R.string.dese_onboarding_2,R.string.dese_onboarding_3)
 

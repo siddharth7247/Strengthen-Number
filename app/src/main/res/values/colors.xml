@@ -11,7 +11,9 @@
     <color name="sf_lightGray">#F3F7F7</color>
     <color name="lightGreen">#A2C1C3</color>
     <color name="parrotGreen">#92E54D</color>
+    <color name="green">#76DE21</color>
     <color name="darkWhite">#E0EAEB</color>
     <color name="red">#ED461E</color>
+    <color name="darkGreen">#5FB21A</color>
     <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">#A2C1C3</color>
 </resources>

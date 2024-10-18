@@ -10,6 +10,15 @@
     android:background="@color/white"
     tools:context=".view.activities.OtpScreen">
 
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_btnback"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/txtOtpVarification"
         android:layout_width="wrap_content"
@@ -35,6 +44,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtOtpVarification" />
 
+    <TextView
+        android:id="@+id/txtPleaseEnterOtp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/manrope_medium"
+        android:gravity="center"
+        android:visibility="invisible"
+        android:textColor="@color/red"
+        android:text="Please enter 4 digit OTP"
+        android:textSize="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toStartOf="@+id/otpView"
+        app:layout_constraintTop_toBottomOf="@+id/otpView" />
 
     <com.chaos.view.PinView
         android:id="@+id/otpView"
@@ -68,7 +91,7 @@
         android:layout_marginTop="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/otpView" />
+        app:layout_constraintTop_toBottomOf="@+id/txtPleaseEnterOtp" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnResendOtp"

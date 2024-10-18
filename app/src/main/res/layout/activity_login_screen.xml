@@ -47,6 +47,7 @@
         app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color"
         app:boxStrokeWidth="2dp"
         app:helperTextTextColor="@color/red"
+        app:prefixText="+91"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtEnterMobileNumber"
         app:layout_constraintVertical_bias="0.032"
@@ -62,7 +63,7 @@
             android:fontFamily="@font/manrope_medium"
             android:maxLines="1"
             android:textColor="@color/black"
-            android:textSize="18dp" />
+            android:textSize="15dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -78,6 +79,7 @@
         android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="@id/textInputLayout"
         app:layout_constraintTop_toBottomOf="@id/textInputLayout"/>
+
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnContinue"

@@ -28,4 +28,9 @@
     </string>
     <string name="txt_allow">Allow</string>
     <string name="txt_don_t_allow">Don\'t Allow</string>
+    <string name="txt_profile_setup">Profile Setup</string>
+    <string name="txt_enter_details">Please complete the fields below to set up your profile.</string>
+    <string name="txt_full_name">Full Name</string>
+    <string name="txt_email">Email</string>
+    <string name="txt_terms_condition"><![CDATA[I agree all terms & conditions]]></string>
 </resources>

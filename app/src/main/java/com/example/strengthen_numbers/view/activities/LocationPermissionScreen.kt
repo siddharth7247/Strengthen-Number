@@ -1,5 +1,6 @@
 package com.example.strengthen_numbers.view.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -28,5 +29,9 @@ class LocationPermissionScreen : AppCompatActivity() {
         btnDontAllow = findViewById(R.id.btnDontAllow)
 
         txtBulletPointList.setText(R.string.bullted_list)
+        btnAllow.setOnClickListener{
+            intent = Intent(this,ProfilesetUpScreen::class.java)
+            startActivity(intent)
+        }
     }
 }

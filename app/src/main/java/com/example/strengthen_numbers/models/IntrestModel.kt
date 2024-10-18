@@ -1,4 +1,4 @@
 package com.example.strengthen_numbers.models
 
-class IntrestModel {
+data class IntrestModel(val name:String,val img:Int) {
 }
