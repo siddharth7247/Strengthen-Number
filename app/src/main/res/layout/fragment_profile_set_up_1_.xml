@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.fragments.ProfileSetUp_1_Fragment">
+
+    <TextView
+        android:id="@+id/txtProfileSetup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/manrope_extrabold"
+        android:text="@string/txt_profile_setup"
+        android:textSize="25dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtEnterDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/manrope_medium"
+        android:gravity="center"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:text="@string/txt_enter_details"
+        android:textSize="15dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtProfileSetup" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nameInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:startIconDrawable="@drawable/ic_person"
+        app:boxCornerRadiusBottomEnd="15dp"
+        app:boxCornerRadiusBottomStart="15dp"
+        app:boxCornerRadiusTopEnd="15dp"
+        app:boxCornerRadiusTopStart="15dp"
+        app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color"
+        app:boxStrokeWidth="2dp"
+        app:helperTextTextColor="@color/red"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEnterDetails"
+        app:layout_constraintVertical_bias="0.032"
+        tools:layout_editor_absoluteX="20dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtFullName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:inputType="number"
+            android:hint="@string/txt_full_name"
+            android:fontFamily="@font/manrope_medium"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:startIconDrawable="@drawable/ic_mail"
+        app:boxCornerRadiusBottomEnd="15dp"
+        app:boxCornerRadiusBottomStart="15dp"
+        app:boxCornerRadiusTopEnd="15dp"
+        app:boxCornerRadiusTopStart="15dp"
+        app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color"
+        app:boxStrokeWidth="2dp"
+        app:helperTextTextColor="@color/red"
+        app:layout_constraintStart_toStartOf="@id/nameInputLayout"
+        app:layout_constraintTop_toBottomOf="@id/nameInputLayout"
+        app:layout_constraintVertical_bias="0.032"
+        tools:layout_editor_absoluteX="20dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:inputType="number"
+            android:hint="@string/txt_email"
+            android:fontFamily="@font/manrope_medium"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/dateInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:startIconDrawable="@drawable/ic_calender"
+        app:boxCornerRadiusBottomEnd="15dp"
+        app:boxCornerRadiusBottomStart="15dp"
+        app:boxCornerRadiusTopEnd="15dp"
+        app:boxCornerRadiusTopStart="15dp"
+        app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color"
+        app:boxStrokeWidth="2dp"
+        app:helperTextTextColor="@color/red"
+        app:layout_constraintStart_toStartOf="@id/emailInputLayout"
+        app:layout_constraintTop_toBottomOf="@id/emailInputLayout"
+        app:layout_constraintVertical_bias="0.032"
+        tools:layout_editor_absoluteX="20dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtMobileNo"
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:alpha="0.7"
+            android:fontFamily="@font/manrope_medium"
+            android:hint="Date of Birth"
+            android:inputType="number"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <CheckBox
+        android:id="@+id/ckbTerms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:text="I agree all terms &amp; conditions."
+        app:layout_constraintTop_toBottomOf="@+id/dateInputLayout"
+        app:layout_constraintStart_toStartOf="@id/nameInputLayout"/>
+    <CheckBox
+        android:id="@+id/ckbAge"
+        android:layout_width="wrap_content"
+        android:layout_height="22dp"
+        android:layout_marginStart="2dp"
+        android:text="Yes I am 18+ years old."
+        app:layout_constraintTop_toBottomOf="@+id/ckbTerms"
+        app:layout_constraintStart_toStartOf="@id/nameInputLayout"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
