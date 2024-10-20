@@ -15,18 +15,20 @@ class ProfileSetUp_3_Fragment : Fragment() {
 
     lateinit var hobbyGridView : GridView
     lateinit var hobbyList : List<IntrestModel>
+    lateinit var intrestGrid : GridView
+    lateinit var hobbyAdapter : HobbyGridAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        return inflater.inflate(R.layout.fragment_profile_set_up_3_, container, false)
-
-
+        val view = inflater.inflate(R.layout.fragment_profile_set_up_3_, container, false)
+        intrestGrid = view.findViewById(R.id.hobbyGridView)
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -43,8 +45,22 @@ class ProfileSetUp_3_Fragment : Fragment() {
             IntrestModel("Sport",R.drawable.ic_sports),
             IntrestModel("Running",R.drawable.ic_running))
 
-        val hobbyAdapter = HobbyGridAdapter(hobbyList,requireContext())
+        hobbyAdapter = HobbyGridAdapter(hobbyList,requireContext())
         hobbyGridView.adapter = hobbyAdapter
+        hobbyGridView.setOnItemClickListener { _, _, position, _ ->
+            hobbyAdapter.toggleSelection(position)
+        }
     }
+    fun getInterestsInfo(): InterestsInfo {
+        val selectedHobbies = hobbyAdapter.getSelectedHobbies()
 
+        return InterestsInfo(
+            interests = selectedHobbies.map { it.name },
+        )
+    }
 }
+
+
+data class InterestsInfo(
+    val interests: List<String>,
+)

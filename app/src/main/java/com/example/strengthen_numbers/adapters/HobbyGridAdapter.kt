@@ -1,45 +1,70 @@
 package com.example.strengthen_numbers.adapters
 
 import android.content.Context
+import android.icu.text.Transliterator.Position
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.compose.ui.test.isSelected
+import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.RecyclerView
 import com.example.strengthen_numbers.R
 import com.example.strengthen_numbers.models.IntrestModel
 
-class HobbyGridAdapter(private val hoobylist : List<IntrestModel>,private val context: Context) :  BaseAdapter(){
+class HobbyGridAdapter(private val hobbyList: List<IntrestModel>, private val context: Context) : BaseAdapter() {
     private var layoutInflater: LayoutInflater? = null
-    private lateinit var hobbyName: TextView
-    private lateinit var hobbyImage: ImageView
-    override fun getCount(): Int {
-        return hoobylist.size
-    }
 
-    override fun getItem(p0: Int): Any? {
-        return null
-    }
+    override fun getCount(): Int = hobbyList.size
 
-    override fun getItemId(p0: Int): Long {
-       return 0
-    }
+    override fun getItem(position: Int): Any = hobbyList[position]
 
-    override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
-        var convertView = p1
-        if (layoutInflater == null) {
-            layoutInflater =
-                context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        }
+    override fun getItemId(position: Int): Long = position.toLong()
+
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+        val view: View
+        val viewHolder: ViewHolder
+
         if (convertView == null) {
-            convertView = layoutInflater!!.inflate(R.layout.item_intrest, null)
+            layoutInflater = layoutInflater ?: context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            view = layoutInflater!!.inflate(R.layout.item_intrest, parent, false)
+            viewHolder = ViewHolder(view)
+            view.tag = viewHolder
+        } else {
+            view = convertView
+            viewHolder = view.tag as ViewHolder
         }
-        hobbyName = convertView!!.findViewById(R.id.txtHobby)
-        hobbyImage = convertView!!.findViewById(R.id.imgHobby)
 
-        hobbyName.setText(hoobylist.get(p0).name)
-        hobbyImage.setImageResource(hoobylist.get(p0).img)
-        return convertView
+        val hobby = hobbyList[position]
+        viewHolder.hobbyName.text = hobby.name
+        viewHolder.hobbyImage.setImageResource(hobby.img)
+        updateViewAppearance(view, viewHolder, hobby.isSelected)
+        return view
+    }
+
+    private fun updateViewAppearance(view: View, viewHolder: ViewHolder, isSelected: Boolean) {
+        if (isSelected) {
+            //view.setBackgroundResource(R.drawable.selected_hobby_backgroung)
+            viewHolder.hobbyName.setTextColor(ContextCompat.getColor(context, R.color.black))
+        } else {
+           // view.setBackgroundResource(R.drawable.unselected_hobby_bacground)
+            viewHolder.hobbyName.setTextColor(ContextCompat.getColor(context, R.color.lightGreen))
+        }
+    }
+
+    private class ViewHolder(view: View) {
+        val hobbyName: TextView = view.findViewById(R.id.txtHobby)
+        val hobbyImage: ImageView = view.findViewById(R.id.imgHobby)
+    }
+
+    fun toggleSelection(position: Int) {
+        hobbyList[position].isSelected = !hobbyList[position].isSelected
+        notifyDataSetChanged()
+    }
+
+    fun getSelectedHobbies(): List<IntrestModel> {
+        return hobbyList.filter { it.isSelected }
     }
 }

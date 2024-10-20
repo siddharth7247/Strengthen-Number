@@ -3,10 +3,195 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/white"
     android:layout_height="match_parent"
     tools:context=".view.fragments.ProfileSetUp_2_Fragment">
 
+    <TextView
+        android:id="@+id/txtProfileSetup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/manrope_extrabold"
+        android:text="@string/txt_profile_setup"
+        android:textSize="25dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtEnterDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/manrope_medium"
+        android:gravity="center"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:text="@string/txt_enter_details"
+        android:textSize="15dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtProfileSetup" />
+
+    <ImageView
+        android:id="@+id/profile_image"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/shap_imageview"
+        android:padding="2dp"
+        android:layout_marginTop="20dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_add_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEnterDetails" />
+
+    <TextView
+       android:id="@+id/txtImageProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/manrope_regular"
+        android:text="Upload Profile Picture"
+        android:textSize="15sp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_image"/>
+
+    <LinearLayout
+        android:id="@+id/userNameLayout"
+        android:layout_margin="20dp"
+        android:padding="2dp"
+        android:background="@drawable/checkbox_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/txtImageProfile">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_person" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="40dp"
+            android:background="@color/lightGreen" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_weight="1"
+            android:id="@+id/userNameInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:helperTextTextColor="@color/red"
+            android:background="@null"
+            app:boxBackgroundMode="none">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtUserName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:hint="@string/txt_username"
+                android:fontFamily="@font/manrope_regular"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:background="@null"
+                android:textSize="15sp"
+                android:paddingVertical="4dp"
+                android:minHeight="40dp"
+                android:maxHeight="40dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+    <LinearLayout
+    android:id="@+id/genderLayout"
+    android:layout_margin="20dp"
+    android:padding="2dp"
+    android:background="@drawable/checkbox_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal"
+    app:layout_constraintTop_toBottomOf="@id/userNameLayout">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_margin="5dp"
+        android:src="@drawable/ic_gender" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="40dp"
+        android:background="@color/lightGreen" />
+
+    <AutoCompleteTextView
+        android:id="@+id/genderAutoCompleteTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Gender"
+        android:inputType="none"
+        android:fontFamily="@font/manrope_regular"
+        android:textSize="15sp"
+        android:drawablePadding="8dp"
+        android:padding="16dp"
+        android:background="@drawable/shap_dropdownlist"/>
 
 
+</LinearLayout>
+    <LinearLayout
+        android:id="@+id/bioLayout"
+        android:layout_margin="20dp"
+        android:padding="2dp"
+        android:background="@drawable/checkbox_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/genderLayout">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_bio" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="40dp"
+            android:background="@color/lightGreen" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_weight="1"
+            android:id="@+id/bioInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:helperTextTextColor="@color/red"
+            android:background="@null"
+            app:boxBackgroundMode="none">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtBio"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:hint="@string/txt_bio"
+                android:fontFamily="@font/manrope_regular"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:background="@null"
+                android:textSize="15sp"
+                android:paddingVertical="4dp"
+                android:minHeight="40dp"
+                android:maxHeight="40dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

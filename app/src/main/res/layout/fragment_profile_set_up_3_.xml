@@ -38,12 +38,49 @@
         android:id="@+id/hobbyGridView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:horizontalSpacing="10dp"
         android:numColumns="3"
         android:verticalSpacing="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEnterDetails" />
+        app:layout_constraintTop_toBottomOf="@+id/txtEnterDetails"/>
+    <LinearLayout
+        android:id="@+id/fitnessLevelLayout"
+        android:padding="2dp"
+        android:background="@drawable/checkbox_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hobbyGridView">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_level" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="40dp"
+            android:background="@color/lightGreen" />
+
+        <AutoCompleteTextView
+            android:id="@+id/genderAutoCompleteTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Gender"
+            android:inputType="none"
+            android:fontFamily="@font/manrope_regular"
+            android:textSize="15sp"
+            android:drawablePadding="8dp"
+            android:padding="16dp"
+            android:background="@drawable/shap_dropdownlist"/>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
