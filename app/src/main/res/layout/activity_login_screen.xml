@@ -33,38 +33,57 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtLogin" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+    <LinearLayout
+        android:id="@+id/phoneLayout"
+        android:layout_margin="20dp"
+        android:padding="2dp"
+        android:background="@drawable/checkbox_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        app:startIconDrawable="@drawable/ic_phone"
-        app:boxCornerRadiusBottomEnd="15dp"
-        app:boxCornerRadiusBottomStart="15dp"
-        app:boxCornerRadiusTopEnd="15dp"
-        app:boxCornerRadiusTopStart="15dp"
-        app:boxStrokeColor="@color/mtrl_textinput_default_box_stroke_color"
-        app:boxStrokeWidth="2dp"
-        app:helperTextTextColor="@color/red"
-        app:prefixText="+91"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEnterMobileNumber"
-        app:layout_constraintVertical_bias="0.032"
-        tools:layout_editor_absoluteX="20dp">
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/txtEnterMobileNumber">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtMobileNo"
-            android:layout_width="match_parent"
+        <ImageView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:alpha="0.7"
-            android:inputType="number"
-            android:hint="@string/txt_mobile_number"
-            android:fontFamily="@font/manrope_medium"
-            android:maxLines="1"
-            android:textColor="@color/black"
-            android:textSize="15dp" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:padding="8dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_phone" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="40dp"
+            android:background="@color/lightGreen" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_weight="1"
+            android:id="@+id/nameInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:helperTextTextColor="@color/red"
+            app:prefixTextAppearance="@font/manrope_light"
+            android:background="@null"
+            app:boxBackgroundMode="none">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtMobileNo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:hint="@string/txt_mobile_number"
+                android:fontFamily="@font/manrope_regular"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:background="@null"
+                android:textSize="15sp"
+                android:paddingVertical="4dp"
+                android:minHeight="40dp"
+                android:maxHeight="40dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/txtError"
@@ -77,8 +96,8 @@
         android:visibility="invisible"
         android:layout_marginStart="5dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintStart_toStartOf="@id/textInputLayout"
-        app:layout_constraintTop_toBottomOf="@id/textInputLayout"/>
+        app:layout_constraintStart_toStartOf="@id/phoneLayout"
+        app:layout_constraintTop_toBottomOf="@id/phoneLayout"/>
 
 
     <com.google.android.material.button.MaterialButton
@@ -95,7 +114,7 @@
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/phoneLayout"
         app:layout_constraintVertical_bias="0.061" />
 
 

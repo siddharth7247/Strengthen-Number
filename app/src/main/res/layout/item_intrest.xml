@@ -3,8 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="wrap_content"
-    android:background="@color/white"
-    android:backgroundTint="@color/white"
     app:strokeColor="@color/lightGreen"
     android:layout_height="wrap_content">
 
@@ -13,8 +11,7 @@
         android:orientation="vertical"
         android:gravity="center"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/intrest_item_background">
+        android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/imgHobby"
             android:src="@drawable/ic_gym"

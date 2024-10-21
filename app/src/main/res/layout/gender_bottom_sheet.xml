@@ -7,21 +7,32 @@
     android:layout_height="wrap_content">
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnCamera"
+        android:id="@+id/btnMale"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/primaryColor"
         android:backgroundTint="@color/white"
-        android:text="Camera"
+        android:text="Male"
         android:fontFamily="@font/manrope_extrabold"
         android:textSize="15sp" />
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnGallary"
+        android:id="@+id/btnFemale"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/primaryColor"
         android:backgroundTint="@color/white"
-        android:text="Gallery"
+        android:text="Female"
         android:fontFamily="@font/manrope_extrabold"
         android:textSize="15sp" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnOther"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/primaryColor"
+        android:backgroundTint="@color/white"
+        android:text="Other"
+        android:fontFamily="@font/manrope_extrabold"
+        android:textSize="15sp" />
+
+
 </LinearLayout>

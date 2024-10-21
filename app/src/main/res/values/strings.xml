@@ -37,4 +37,7 @@
     <string name="txt_username">Username</string>
     <string name="txt_bio">Bio</string>
     <string name="txt_previous">Previous</string>
+    <string name="txt_please_enter_valid_name">Please enter valid Name</string>
+    <string name="txt_gender">Gender</string>
+    <string name="txt_fitness_level">Fitness Level</string>
 </resources>

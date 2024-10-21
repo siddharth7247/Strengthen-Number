@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.example.strengthen_numbers.R
 import com.example.strengthen_numbers.adapters.ProfileScreenAdapter
-import com.example.strengthen_numbers.models.IntrestModel
 import com.example.strengthen_numbers.view.fragments.InterestsInfo
 import com.example.strengthen_numbers.view.fragments.PersonalInfo
 import com.example.strengthen_numbers.view.fragments.ProfileSetUp_1_Fragment
@@ -42,18 +41,6 @@ class ProfilesetUpScreen : AppCompatActivity() {
 
         TabLayoutMediator(tabLayout,viewPager){
                 tab : TabLayout.Tab,position :Int ->
-            when(position){
-                0 -> {
-                    tab.text = "Chatsfgdgdfgfd"
-                }
-                1 ->{
-                    tab.text = "Statusdfgdfgdfg"
-                }
-                2 ->{
-                    tab.text = "Callsfdgdfgfdg"
-                }
-
-            }
         }.attach()
         viewPager.isUserInputEnabled = false
 

@@ -34,18 +34,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtProfileSetup" />
 
-    <ImageView
+<!--    <ImageView-->
+<!--        android:id="@+id/profile_image"-->
+<!--        android:layout_width="120dp"-->
+<!--        android:layout_height="120dp"-->
+<!--        android:background="@drawable/shap_imageview"-->
+<!--        android:padding="2dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:scaleType="centerInside"-->
+<!--        android:src="@drawable/ic_add_img"-->
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/profile_image"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:background="@drawable/shap_imageview"
-        android:padding="2dp"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        app:civ_border_width="1dp"
         android:layout_marginTop="20dp"
-        android:scaleType="centerInside"
-        android:src="@drawable/ic_add_img"
+        android:background="@drawable/shap_imageview"
+        app:civ_border_color="@color/lightGreen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEnterDetails" />
+        app:layout_constraintTop_toBottomOf="@+id/txtEnterDetails"/>
 
     <TextView
        android:id="@+id/txtImageProfile"
@@ -108,16 +118,32 @@
         </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
+    <TextView
+        android:id="@+id/userNameError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/manrope_medium"
+        android:text="@string/txt_please_enter_valid_name"
+        android:textColor="@color/red"
+        android:textSize="13dp"
+        android:visibility="invisible"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@id/userNameLayout"
+        app:layout_constraintTop_toBottomOf="@id/userNameLayout"/>
+
     <LinearLayout
-    android:id="@+id/genderLayout"
-    android:layout_margin="20dp"
-    android:padding="2dp"
-    android:background="@drawable/checkbox_style"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:gravity="center"
-    android:orientation="horizontal"
-    app:layout_constraintTop_toBottomOf="@id/userNameLayout">
+        android:id="@+id/genderLayout"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:padding="2dp"
+        android:background="@drawable/checkbox_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/userNameLayout">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -131,23 +157,51 @@
         android:layout_height="40dp"
         android:background="@color/lightGreen" />
 
-    <AutoCompleteTextView
-        android:id="@+id/genderAutoCompleteTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Gender"
-        android:inputType="none"
-        android:fontFamily="@font/manrope_regular"
-        android:textSize="15sp"
-        android:drawablePadding="8dp"
-        android:padding="16dp"
-        android:background="@drawable/shap_dropdownlist"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_weight="1"
+            android:id="@+id/genderInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:helperTextTextColor="@color/red"
+            android:background="@null"
+            app:boxBackgroundMode="none">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtGender"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="text"
+            android:hint="@string/txt_gender"
+            android:focusable="false"
+            android:fontFamily="@font/manrope_regular"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:background="@null"
+            android:textSize="15sp"
+            android:paddingVertical="4dp"
+            android:minHeight="40dp"
+            android:maxHeight="40dp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
 </LinearLayout>
+    <TextView
+        android:id="@+id/genderError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/manrope_medium"
+        android:text="@string/txt_please_enter_valid_name"
+        android:textColor="@color/red"
+        android:textSize="13dp"
+        android:visibility="invisible"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@id/genderLayout"
+        app:layout_constraintTop_toBottomOf="@id/genderLayout"/>
     <LinearLayout
         android:id="@+id/bioLayout"
-        android:layout_margin="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:padding="2dp"
         android:background="@drawable/checkbox_style"
         android:layout_width="match_parent"
@@ -193,5 +247,19 @@
                 android:maxHeight="40dp" />
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/bioError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/manrope_medium"
+        android:text="@string/txt_please_enter_valid_name"
+        android:textColor="@color/red"
+        android:textSize="13dp"
+        android:visibility="invisible"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@id/bioLayout"
+        app:layout_constraintTop_toBottomOf="@id/bioLayout"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

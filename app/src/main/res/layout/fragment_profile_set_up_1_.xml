@@ -82,11 +82,25 @@
                 android:minHeight="40dp"
                 android:maxHeight="40dp" />
         </com.google.android.material.textfield.TextInputLayout>
-
     </LinearLayout>
+    <TextView
+        android:id="@+id/nameError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/manrope_medium"
+        android:text="@string/txt_please_enter_valid_name"
+        android:textColor="@color/red"
+        android:textSize="13dp"
+        android:visibility="invisible"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@id/nameLayout"
+        app:layout_constraintTop_toBottomOf="@id/nameLayout"/>
     <LinearLayout
         android:id="@+id/emailLayout"
-        android:layout_margin="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="30dp"
         android:padding="2dp"
         android:background="@drawable/checkbox_style"
         android:layout_width="match_parent"
@@ -133,9 +147,24 @@
         </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
+    <TextView
+        android:id="@+id/emailError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/manrope_medium"
+        android:text="@string/txt_please_enter_valid_name"
+        android:textColor="@color/red"
+        android:textSize="13dp"
+        android:visibility="invisible"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@id/emailLayout"
+        app:layout_constraintTop_toBottomOf="@id/emailLayout"/>
     <LinearLayout
         android:id="@+id/dobLayout"
-        android:layout_margin="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
         android:padding="2dp"
         android:background="@drawable/checkbox_style"
         android:layout_width="match_parent"
@@ -173,6 +202,7 @@
                 android:hint="@string/txt_date_of_birth"
                 android:fontFamily="@font/manrope_regular"
                 android:maxLines="1"
+                android:focusable="false"
                 android:textColor="@color/black"
                 android:background="@null"
                 android:textSize="15sp"
@@ -180,15 +210,27 @@
                 android:minHeight="40dp"
                 android:maxHeight="40dp" />
         </com.google.android.material.textfield.TextInputLayout>
-
     </LinearLayout>
+    <TextView
+        android:id="@+id/dateOfBirthError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/manrope_medium"
+        android:text="@string/txt_please_enter_valid_name"
+        android:textColor="@color/red"
+        android:textSize="13dp"
+        android:visibility="invisible"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@id/dobLayout"
+        app:layout_constraintTop_toBottomOf="@id/dobLayout"/>
 
         <CheckBox
         android:id="@+id/ckbTerms"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="I agree all terms &amp; conditions."
-        app:layout_constraintTop_toBottomOf="@+id/dobLayout"
+        app:layout_constraintTop_toBottomOf="@+id/dateOfBirthError"
         app:layout_constraintStart_toStartOf="@id/nameLayout"/>
     <CheckBox
         android:id="@+id/ckbAge"

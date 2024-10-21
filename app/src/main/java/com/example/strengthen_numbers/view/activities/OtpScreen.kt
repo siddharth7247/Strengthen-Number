@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -29,6 +30,7 @@ class OtpScreen : AppCompatActivity() {
     lateinit var otpView : PinView
     lateinit var txtPleaseEnterOtp : TextView
     lateinit var layout : ConstraintLayout
+    lateinit var btnBack : ImageView
 
     @SuppressLint("MissingInflatedId", "SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,6 +45,7 @@ class OtpScreen : AppCompatActivity() {
         btnVerify = findViewById(R.id.btnVerify)
         otpView = findViewById(R.id.otpView)
         layout = findViewById(R.id.main)
+        btnBack = findViewById(R.id.btnBack)
 
         var bundle : Bundle? = intent.extras
         val phoneNo = bundle?.get("phoneNo")
@@ -63,9 +66,14 @@ class OtpScreen : AppCompatActivity() {
                 startActivity(intent)
             }
         }
+        btnBack.setOnClickListener{
+            intent = Intent(this,LoginScreen::class.java)
+            startActivity(intent)
+        }
     }
+
+
     private fun sendOtp(){
-        Log.d("Send Otp Method", "send otp called")
         btnResendOtp.setClickable(false)
         object : CountDownTimer(30000, 1000) {
             override fun onTick(millisUntilFinished: Long) {

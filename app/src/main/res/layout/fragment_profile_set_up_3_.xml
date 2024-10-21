@@ -70,17 +70,31 @@
             android:layout_height="40dp"
             android:background="@color/lightGreen" />
 
-        <AutoCompleteTextView
-            android:id="@+id/genderAutoCompleteTextView"
-            android:layout_width="match_parent"
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_weight="1"
+            android:id="@+id/fitnessLevelInputLayout"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="Gender"
-            android:inputType="none"
-            android:fontFamily="@font/manrope_regular"
-            android:textSize="15sp"
-            android:drawablePadding="8dp"
-            android:padding="16dp"
-            android:background="@drawable/shap_dropdownlist"/>
+            app:helperTextTextColor="@color/red"
+            android:background="@null"
+            app:boxBackgroundMode="none">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtFitnessLevel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:hint="@string/txt_fitness_level"
+                android:focusable="false"
+                android:fontFamily="@font/manrope_regular"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:background="@null"
+                android:textSize="15sp"
+                android:paddingVertical="4dp"
+                android:minHeight="40dp"
+                android:maxHeight="40dp" />
+        </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
