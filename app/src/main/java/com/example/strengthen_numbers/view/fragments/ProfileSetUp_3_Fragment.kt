@@ -37,10 +37,6 @@ class ProfileSetUp_3_Fragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_profile_set_up_3_, container, false)
         intrestGrid = view.findViewById(R.id.hobbyGridView)
         edtFitnessLevel = view.findViewById(R.id.edtFitnessLevel)
-        fitnessLevelBottlomSheet = inflater.inflate(R.layout.fitness_level_bottom_sheet,container)
-        btnBeginner = fitnessLevelBottlomSheet.findViewById(R.id.btnBeginner)
-        btnIntermediate = fitnessLevelBottlomSheet.findViewById(R.id.btnIntermedate)
-        btnAdvance = fitnessLevelBottlomSheet.findViewById(R.id.btnAdvance)
         return view
     }
 
@@ -64,22 +60,9 @@ class ProfileSetUp_3_Fragment : Fragment() {
             hobbyAdapter.toggleSelection(position)
         }
         edtFitnessLevel.setOnClickListener{
-            val fitnessDialog = BottomSheetDialog(requireContext())
-            fitnessDialog.setContentView(fitnessLevelBottlomSheet)
-            fitnessDialog.show()
-            btnBeginner.setOnClickListener{
-                edtFitnessLevel.setText(btnBeginner.text)
-                fitnessDialog.dismiss()
-            }
-            btnIntermediate.setOnClickListener{
-                edtFitnessLevel.setText(btnIntermediate.text)
-                fitnessDialog.dismiss()
-            }
-            btnAdvance.setOnClickListener{
-                edtFitnessLevel.setText(btnAdvance.text)
-                fitnessDialog.dismiss()
-            }
+            getFitnessLevel()
         }
+
     }
     fun getInterestsInfo(): InterestsInfo {
         val selectedHobbies = hobbyAdapter.getSelectedHobbies()
@@ -87,6 +70,27 @@ class ProfileSetUp_3_Fragment : Fragment() {
         return InterestsInfo(
             interests = selectedHobbies.map { it.name },
         )
+    }
+    private fun getFitnessLevel(){
+        fitnessLevelBottlomSheet = layoutInflater.inflate(R.layout.fitness_level_bottom_sheet,null)
+        btnBeginner = fitnessLevelBottlomSheet.findViewById(R.id.btnBeginner)
+        btnIntermediate = fitnessLevelBottlomSheet.findViewById(R.id.btnIntermedate)
+        btnAdvance = fitnessLevelBottlomSheet.findViewById(R.id.btnAdvance)
+        val fitnessDialog = BottomSheetDialog(requireContext())
+        fitnessDialog.setContentView(fitnessLevelBottlomSheet)
+        fitnessDialog.show()
+        btnBeginner.setOnClickListener{
+            edtFitnessLevel.setText(btnBeginner.text)
+            fitnessDialog.dismiss()
+        }
+        btnIntermediate.setOnClickListener{
+            edtFitnessLevel.setText(btnIntermediate.text)
+            fitnessDialog.dismiss()
+        }
+        btnAdvance.setOnClickListener{
+            edtFitnessLevel.setText(btnAdvance.text)
+            fitnessDialog.dismiss()
+        }
     }
 }
 

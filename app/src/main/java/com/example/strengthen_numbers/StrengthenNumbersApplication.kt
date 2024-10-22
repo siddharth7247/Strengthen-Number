@@ -1,4 +1,8 @@
 package com.example.strengthen_numbers
 
-class StrengthenNumbersApplication {
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
+
+@HiltAndroidApp
+class StrengthenNumbersApplication () : Application(){
 }

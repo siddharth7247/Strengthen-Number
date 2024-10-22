@@ -50,7 +50,6 @@ class OtpScreen : AppCompatActivity() {
         var bundle : Bundle? = intent.extras
         val phoneNo = bundle?.get("phoneNo")
         txtOtpSent.setText("We have sent the verification code to your ${phoneNo} mobile number.")
-        showSnakBar()
         sendOtp()
 
         btnResendOtp.setOnClickListener{
@@ -86,13 +85,5 @@ class OtpScreen : AppCompatActivity() {
             }
         }.start()
     }
-    private fun showSnakBar(){
-        val view: View? = this.currentFocus
-        if (view != null) {
-            val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-            inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0)
-        }
-        val snackbar = Snackbar.make(layout, "One Time Password(OTP) has been sent Scuccessfully", Snackbar.LENGTH_LONG).setBackgroundTint(resources.getColor(R.color.darkGreen)).setTextMaxLines(2)
-        snackbar.show()
-    }
+
 }

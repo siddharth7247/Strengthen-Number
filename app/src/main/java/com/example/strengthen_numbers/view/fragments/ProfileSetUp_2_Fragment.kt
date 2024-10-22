@@ -47,15 +47,7 @@ class ProfileSetUp_2_Fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        genderBottomSheet = inflater.inflate(R.layout.gender_bottom_sheet,container)
-        imageSourceBottomSheet = inflater.inflate(R.layout.image_source_bottom_sheet,container)
-        btnMale = genderBottomSheet.findViewById(R.id.btnMale)
-        btnFemale = genderBottomSheet.findViewById(R.id.btnFemale)
-        btnOther = genderBottomSheet.findViewById(R.id.btnOther)
-        btnCamera = imageSourceBottomSheet.findViewById(R.id.btnCamera)
-        btnGallery = imageSourceBottomSheet.findViewById(R.id.btnGallary)
         return inflater.inflate(R.layout.fragment_profile_set_up_2_, container, false)
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -87,6 +79,10 @@ class ProfileSetUp_2_Fragment : Fragment() {
     }
 
     private fun getGender(){
+        genderBottomSheet = layoutInflater.inflate(R.layout.gender_bottom_sheet,null)
+        btnMale = genderBottomSheet.findViewById(R.id.btnMale)
+        btnFemale = genderBottomSheet.findViewById(R.id.btnFemale)
+        btnOther = genderBottomSheet.findViewById(R.id.btnOther)
         val genderDialog = BottomSheetDialog(requireContext())
         genderDialog.setContentView(genderBottomSheet)
         genderDialog.show()
@@ -104,6 +100,9 @@ class ProfileSetUp_2_Fragment : Fragment() {
         }
     }
     private fun getProfileImage(){
+        imageSourceBottomSheet = layoutInflater.inflate(R.layout.image_source_bottom_sheet,null)
+        btnCamera = imageSourceBottomSheet.findViewById(R.id.btnCamera)
+        btnGallery = imageSourceBottomSheet.findViewById(R.id.btnGallary)
         val imageSourceDialog = BottomSheetDialog(requireContext())
         imageSourceDialog.setContentView(imageSourceBottomSheet)
 

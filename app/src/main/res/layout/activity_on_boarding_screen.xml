@@ -68,7 +68,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_marginTop="20dp"
-                    android:outlineAmbientShadowColor="@color/lightGreen"
+                    app:ci_drawable="@drawable/selected_dot_shape"
+                    app:ci_drawable_unselected = "@drawable/unselected_dot_shape"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintBottom_toTopOf="@id/btnNext" />
