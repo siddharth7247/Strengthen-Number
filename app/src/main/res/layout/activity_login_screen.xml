@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/manrope_extrabold"
         android:text="@string/txt_account"
-        android:textSize="25dp"
+        android:textSize="30dp"
         android:layout_marginTop="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,11 +28,10 @@
         android:fontFamily="@font/manrope_medium"
         android:text="@string/dese_enter_mobile_num"
         android:textSize="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtLogin" />
-
 
     <LinearLayout
         android:id="@+id/phoneLayout"
@@ -71,7 +70,7 @@
                 android:id="@+id/edtMobileNo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="text"
+                android:inputType="number"
                 android:hint="@string/txt_mobile_number"
                 android:fontFamily="@font/manrope_regular"
                 android:maxLines="1"
@@ -95,7 +94,7 @@
         android:textSize="13dp"
         android:visibility="invisible"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="1dp"
         app:layout_constraintStart_toStartOf="@id/phoneLayout"
         app:layout_constraintTop_toBottomOf="@id/phoneLayout"/>
 

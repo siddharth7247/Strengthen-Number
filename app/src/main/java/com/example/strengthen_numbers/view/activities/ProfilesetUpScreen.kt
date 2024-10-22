@@ -53,10 +53,13 @@ class ProfilesetUpScreen : AppCompatActivity() {
         btnNext.setOnClickListener {
             when (viewPager.currentItem) {
                 0 -> {
-                    val fragment =pageAdapter.getFragment(0) as ProfileSetUp_1_Fragment
-                    personalInfo = fragment.getInfo()
-                    Log.d("Personal Info", personalInfo.toString())
-                    viewPager.currentItem = 1
+                    val fragment = pageAdapter.getFragment(0) as ProfileSetUp_1_Fragment
+                    val isValid = fragment.isValid()
+                        if (isValid){
+                            personalInfo = fragment.getInfo()
+                            Log.d("Personal Info", personalInfo.toString())
+                            viewPager.currentItem = 1
+                        }
                 }
                 1 -> viewPager.currentItem = 2
                 2 -> {
