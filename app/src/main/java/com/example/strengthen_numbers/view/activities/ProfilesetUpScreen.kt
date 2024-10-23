@@ -9,6 +9,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.example.example.UserData
+import com.example.example.UserResponce
 import com.example.strengthen_numbers.R
 import com.example.strengthen_numbers.adapters.ProfileScreenAdapter
 import com.example.strengthen_numbers.view.fragments.InterestsInfo
@@ -50,6 +51,9 @@ class ProfilesetUpScreen : AppCompatActivity() {
         }.attach()
         viewPager.isUserInputEnabled = false
 
+        var userShp = getSharedPreferences("UserData", MODE_PRIVATE)
+        var token = userShp.getString("token","")
+        Log.d("Token", token.toString())
         btnPrevious.setOnClickListener {
             if (viewPager.currentItem > 0) {
                 viewPager.currentItem = viewPager.currentItem - 1
@@ -65,7 +69,8 @@ class ProfilesetUpScreen : AppCompatActivity() {
                             personalInfo = fragment.getInfo()
                             Log.d("Personal Info", personalInfo.toString())
                             var UserData = UserData(name = personalInfo.fullName, email = personalInfo.email, dob = personalInfo.dateOfBirth)
-                            profileViewModel.setupProfile(UserData)
+                            var userRes = UserResponce(UserData)
+                            profileViewModel.setupProfile(token,userRes)
                             viewPager.currentItem = 1
                         }
                 }

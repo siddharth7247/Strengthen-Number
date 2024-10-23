@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.example.UserData
+import com.example.example.UserResponce
 import com.example.strengthen_numbers.repository.LoginScreenRepository
 import com.example.strengthen_numbers.repository.ProfileSetUpRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -36,9 +37,9 @@ class ProfileScreenViewModel @Inject constructor(val repository:ProfileSetUpRepo
 //        }
 //    }
 
-    fun setupProfile(userData: UserData){
+    fun setupProfile(token : String?,userRes: UserResponce){
         viewModelScope.launch {
-            var result = repository.setUpProfile(userData)
+            var result = repository.setUpProfile(token,userRes)
             Log.d("Api res",result.toString())
         }
     }
