@@ -52,7 +52,6 @@ class LoginScreen : AppCompatActivity() {
         btnContinue = findViewById(R.id.btnContinue)
         txtPhoneError = findViewById(R.id.txtError)
         layout = findViewById(R.id.main)
-
         btnContinue.setOnClickListener{
             if(edtMobile.text?.length!! < 10){
                 txtPhoneError.visibility = View.VISIBLE

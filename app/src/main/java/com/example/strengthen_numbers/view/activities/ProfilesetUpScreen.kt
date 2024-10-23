@@ -5,18 +5,23 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
+import com.example.example.UserData
 import com.example.strengthen_numbers.R
 import com.example.strengthen_numbers.adapters.ProfileScreenAdapter
 import com.example.strengthen_numbers.view.fragments.InterestsInfo
 import com.example.strengthen_numbers.view.fragments.PersonalInfo
 import com.example.strengthen_numbers.view.fragments.ProfileSetUp_1_Fragment
 import com.example.strengthen_numbers.view.fragments.ProfileSetUp_3_Fragment
+import com.example.strengthen_numbers.viewmodels.ProfileScreenViewModel
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ProfilesetUpScreen : AppCompatActivity() {
 
     lateinit var tabLayout: TabLayout
@@ -26,6 +31,7 @@ class ProfilesetUpScreen : AppCompatActivity() {
     lateinit var btnPrevious : MaterialButton
     lateinit var personalInfo : PersonalInfo
     lateinit var intrestInfo : InterestsInfo
+    val profileViewModel : ProfileScreenViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,6 +64,8 @@ class ProfilesetUpScreen : AppCompatActivity() {
                         if (isValid){
                             personalInfo = fragment.getInfo()
                             Log.d("Personal Info", personalInfo.toString())
+                            var UserData = UserData(name = personalInfo.fullName, email = personalInfo.email, dob = personalInfo.dateOfBirth)
+                            profileViewModel.setupProfile(UserData)
                             viewPager.currentItem = 1
                         }
                 }
